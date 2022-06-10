@@ -1,4 +1,4 @@
-const asyncHandler = require.resolve("express-async-handler");
+const asyncHandler = require("express-async-handler");
 
 //@description Register a new user
 //@route /api/users
