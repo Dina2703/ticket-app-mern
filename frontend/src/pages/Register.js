@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 //hook useSelector to select from our global state(from redux), useDispatch to dispatch our actions, such as 'register'
 import { useSelector, useDispatch } from "react-redux";
 import { register, reset } from "../features/auth/authSlice";
+import Spinner from "../components/Spinner";
 
 function Register() {
   const [formDate, setFormDate] = useState({
@@ -57,6 +58,10 @@ function Register() {
       dispatch(register(userData));
     }
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <>
