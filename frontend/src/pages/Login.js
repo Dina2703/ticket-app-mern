@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
-import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 import { login } from "../features/auth/authSlice";
 
@@ -14,7 +13,7 @@ function Login() {
 
   const dispatch = useDispatch();
 
-  const { user, isLoading, isSuccess, message } = useSelector(
+  const { user, isLoading, isSuccess, isError, message } = useSelector(
     (state) => state.auth
   );
 
