@@ -2,16 +2,15 @@ import { useEffect } from "react";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
-import { getTicket, reset, closeTicket } from "../features/tickets/ticketSlice";
+import { getTicket, closeTicket } from "../features/tickets/ticketSlice";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
 
 function Ticket() {
-  const { ticket, isLoading, isSuccess, isError, message } = useSelector(
+  const { ticket, isLoading, isError, message } = useSelector(
     (state) => state.ticket
   );
 
-  const params = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

@@ -10,6 +10,10 @@ const {
 
 const { protect } = require("../middleware/AuthMiddleware");
 
+//Re-route into note router
+const noteRouter = require("./noteRoutes");
+router.use("/:ticketId/notes", noteRouter);
+
 //router.route("/") - route() allows us chain methods like .post().get().delete() to the same route
 router.route("/").get(protect, getTickets).post(protect, createTicket);
 //route for single ticket
